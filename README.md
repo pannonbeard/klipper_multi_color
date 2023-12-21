@@ -87,3 +87,11 @@ This will deactive your main extruder and let the other extruders take main cont
 
 You'll then need to go from your PTFE Joiner straight into the hotend.
 
+#### Note:
+In Orca turn off ramming when running separate. Orca slicer does set ramming properties with a PRESSURE_ADVANCE setting for klipper machines that I haven't figured out how to get rid of. If you removed the main extruder from the motion queue this does throw an error and will stop your print dead in it tracks. WHen the main extruder is removed it has no idea what extruder to apply the pressure advance to.
+
+# Want to contribute?!
+Happy to have any help! I am not yet the best will all of the amazing things you can do with klipper, but any other ideas of things we can add or improve with this are greatly appriciated!
+
+Open a issue or possibly a pull request and we can have some fun troubleshooting!
+
