@@ -10,6 +10,7 @@ This is an attempt at making a multi color config using an arduino uno and a CNC
 - 12-36v power supply
 - Extra PTFE tubes and connectors
 - [3d printed quad splitter](https://www.printables.com/model/466735-4-to-1-bowdenptfe-tube-joinersplitter)
+- A 2 to 4 color holder or stand
 
 ## Steps
 - Attach Arduino to CB1/Raspberrypi
