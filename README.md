@@ -10,7 +10,7 @@ Right now klipper only supports [CAN on stm32, SAME5x, and rp2040 chips](https:/
 - up to 4x Nema 17 stepper motors
 - up to 4x [extruder parts](https://www.amazon.com/Comgrow-Upgraded-Replacement-Aluminum-Extruder/dp/B07B5118T7/ref=sr_1_13?crid=2T4YEVZ3Q8SVC&keywords=ender+3+extruder&qid=1703171029&sprefix=ender+3+extrude%2Caps%2C143&sr=8-13)
 - USB cable
-- 12-36v power supply
+- 12-24v power supply
 - Extra PTFE tubes and connectors
 - [3d printed quad splitter](https://www.printables.com/model/466735-4-to-1-bowdenptfe-tube-joinersplitter)
 - A 2 to 4 color holder or stand
