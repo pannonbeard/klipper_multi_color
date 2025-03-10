@@ -4,7 +4,7 @@ While exploring options of adding extra I/O, I found that using a usb with an ar
 ## Why no arduino uno canbus??
 Right now klipper only supports [CAN on stm32, SAME5x, and rp2040 chips](https://www.klipper3d.org/CANBUS.html#device-hardware). Arduino uno doesn't quite make the cut in this case.
 
-## Items you'll need to utilize this config
+## Items you'll need to utilize Arduino config
 - Your 3d printer running klipper
 - [Arduino uno, cnc sheild and stepper drivers](https://www.amazon.com/DAOKI-Expansion-Arduino-Heatsink-Engraving/dp/B08KFYKKN4/ref=sr_1_5?crid=O6SY9OGG34GW&keywords=arduino+cnc&qid=1703170197&sprefix=arduino+c%2Caps%2C391&sr=8-5)
 - up to 4x Nema 17 stepper motors
@@ -51,10 +51,18 @@ Baud rate for serial port: 250000
 ## Rpi Pico Steps w/ canbus
 This does require a few extra components to get it to work. If you wanted to use usb instead of canbus, you can flash it with your preffered usb settings for the pico.
 
+- Create Config for Rpi Pico
+- Flash Pico
+- Solder together board to connect the pico to the cnc shield
+- Upload multi_color_rpi_pico.cfg to your klipper machine
+  - Update MCU Serial path
+- Setup up your Arduino and CNC sheild to your needs
+
 Extras needed:
 - [Rpi Pico](https://www.amazon.com/Raspberry-Development-Dual-core-Processor-Integrated/dp/B0CPMBRVDX/ref=sr_1_4?crid=L1CHGUTTQ84H&dib=eyJ2IjoiMSJ9._ppkHtY7vs-4LrTJ-McqCu1TUecr6CsdDR6efMbrA8WPjMqv9WjVU6DcHHFAzA5puIvi6Si_lsSmVZTKbH91SAuwXFPLK2wCbo_40BANJ8TsDWlWbMPMhQR6_oRgyadTB8gKAw-e5-GcizpbW09U6ldzaYstuV6lxaHbGvRfFWJIB5HpFneT_VIBhCnQ0864Gs3cty2wE8SEwzn_X57HyE6gyzNJle9aQCBkhNKRd8w.l_6Y5UI3ovRzEVuJOWbXD5v7WxOUXl5LFb3c2sofQSU&dib_tag=se&keywords=pi+pico&qid=1741572097&sprefix=pi+pico%2Caps%2C144&sr=8-4) (instead of the arduino of course)
 - [5v regulator](https://www.amazon.com/Regulator-Step-Down-Converter-MP1584EN-Aircraft/dp/B0DSZKQGBZ/ref=sr_1_2_sspa?crid=13KWI139KTW4K&dib=eyJ2IjoiMSJ9.KKh06qsL4egEaC49ZvfCUnga4qWmuIudwgSt4MXuAf12uSAPdpct8lo2VMLGpUbK6p1CjCXBeHOWUCfLQX9hERO9wD3RmOfhcZn2dy5s7Psb0_rcjMIkL6HwW0OCTkTqNIbDV3MhwZvI2bo5ZT2bwhT9zvI0A9tTjD29A3GbGZJB9mMI3Qb5y0AEl1F52SswXahNUaGy_L0oao6GT7uzgNaa7f_FaFL4IZAdBYaXzpUgSaeuV4qfV-H3igSJ__IgHNIAwBLzGRQqogCqO01R69iReVpl2hTpDFybD7RFTmg.GMzQw9K2ANzKsYbHWC9f5Fo5A_vTHLjkaR3XVUfGoFU&dib_tag=se&keywords=arduino+5v+regulator&qid=1741571818&sprefix=arduino+5v+regulato%2Caps%2C170&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1)
 - [Canbus Transiever](https://www.amazon.com/Comimark-Transceiver-TJA1050-Controller-Schnittstelle/dp/B07W4VZ2F2/ref=sr_1_6?crid=3UUQ0WMAKBQ9T&dib=eyJ2IjoiMSJ9.NNL58DY5rs0tgrb226Z743zWN8BDbmSIM8wmN1WWJ2YklFU70S0qRFwhFjIpNHzKXr7jLPG3msQJ1cjmFi8bQqkKDzD4uvJp2ktCt7moMfijR2BuZKqyshqfsyDogVMdHmk8yUddm-i_5ay8QQIGfwSj4XR20p2_1yf3kVp387Du9V27y2y99Nx7jHHmFGdG-rDUqfVvL9iUiaPTmm4g-mp2dv9WKIQm4HDBtRL6vbU.haqqTQ4DeLRvuclpCep427jMVSTh_vaFISucwu1C2Po&dib_tag=se&keywords=arduino+canbus&qid=1741571775&sprefix=arduino+canbus%2Caps%2C122&sr=8-6)
+- If no can network [a canbus to usb connector](https://www.amazon.com/FYSETC-STM32F072-Interface-Candlelight-Firmware-Pack/dp/B0BPY5HY6C/ref=sr_1_10?crid=21PWTQ6N64RAU&dib=eyJ2IjoiMSJ9.G7yb_kcxYXUZF5oXmMs5a76vK5ESAj9yFeHi24UY5TlHmDgMu44lJKIgRkhbou0ivgAuUe-9u_2Q0wTiJLtJOgn2czgo6Q2nQxLGfEvZ6GsVcQ1ayGmIQsWsPj8TTkvMIX36N__weTc3NrZwT0-aipwJgnLjzjWLLH_9kH0dew7c88pe9wUlNNvTCLkY6hoLCBk5s1sDY6g1JekDeNZ3DHcnspWpboJjucpi18M4eKQ.QP0HqxScm5Gspfbn9y99oVRyHdHoaIzn15dp9q7zMGE&dib_tag=se&keywords=usb+to+canbus&qid=1741572598&sprefix=usb+to+canbus%2Caps%2C135&sr=8-10)
 - Soldering iron
 - Solderable Project board and Screw Terminals (I got these in a [kit](https://www.amazon.com/Sunxeke-Soldering-Electronic-Compatible-Connector/dp/B0BWCFH57N/ref=sr_1_16?crid=2GVC1KBEVDEVE&dib=eyJ2IjoiMSJ9.JQS93JxT9fTg_Qec5prcl7al7vOkyxKy5UiUVLHgq8xwurRgQW98DkB6WHH6_8qHGtafjirL_wfynDdqTwX6Jf4lvuMTn1Dx6AhqZX8AwW0Dkg0eO1SBgi-23lJEM_vODruIG6sPVAVU8Y3V4CK15wrOwOmY9MAbvDXe5w2zfsiIMr9cwaW-Y6IhUcYOFPh5-3rZ6BLdPPwz0N2wU9GyUj9fg-i_cbYMieUXsXykGI8ZqmjYcMZx8VNgsC3IVOshVIT6LcdJ56dgunQyhJw0m0PELgJf0TmgoWfn8Kwe-5iJQ5jKnsQgLubhVQxWSHEMWblKRDbavoJAVUwYCThXOykll9kZf-CLcyHggB_W_4Cb8GBzLxPO39aODuISS_aA5Ey5USL29j7OiBzaC7sK7EEM7XKEq-ajynHZ-aunMbUViCWD07jPqYtGOc_xdxKh.PWyL7fVF9fudB6r4W5Y8kPY1CIk4oalaPABr0BZkRzo&dib_tag=se&keywords=soldering%2Bproject%2Bboard&qid=1741572021&sprefix=soldering%2Bproject%2Bboard%2Caps%2C126&sr=8-16&th=1))
 - Hookup wire (multi colors to help tell things apart)
@@ -101,6 +109,39 @@ You can attach these pins in any way you like there are so many options on the p
 One thing that caught me up for a while was that there is a 5v line that would normally be fed from the arduino that is plugged in over usb to the cnc board. This 5v connection is essencial for the drivers to work.
 You should connect the `+/-` of the 5v regulator to `VSYS / GND` on the pico, the `VCC / GND` on the canbus transiever, and the `5v line` of the CNC Sheild.
 
+### Note about wiring the Canbus Transiever and Pico together
+For what ever pins you set in the menuconfig as your RX/TX pins, be sure to hook them to the opposite pins on the Transiever board so RX -> TX and TX -> RX. 
+
+## Setup can network
+On your klipper device enter `sudo nano /etc/network/interfaces.d/can0` and set the contents of the file to the following: 
+```
+allow-hotplug can0
+iface can0 can static
+    bitrate 500000
+    up ifconfig $IFACE txqueuelen 1024
+```
+You really need your bitrate of this file to match the CAN bus speed you set in the pico menuconfig.
+
+### Checking if can connection is working
+Once you've updated your can file you can do two things to check that can is working. Connect your USB can device first.
+Enter: `sudo ifconfig can0`
+You should see something that indicates that the can network is communicating with your usb device.
+Something like:
+```
+can0: flags=193<UP,RUNNING,NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 1024  (UNSPEC)
+        RX packets 17302  bytes 131255 (128.1 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7790  bytes 46521 (45.4 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+### Getting your UUID
+With your can usb device wired into your can to usb device enter `~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0`.
+If you have everything connected correctly you should see a UUID appear. If not then double check that your have your CanH and CanL's connected to the correct parts of the can to usb board. 
+If the can to usb board has screw terminals this would be just switching them and running the above command again.
+
+There might be a resistor that needs to be either soldered or plugged into the board for the can to usb to work here. Also double check if your can to usb board needs this or already has it in place.
 
 # Preparing the slicer!
 
