@@ -1,5 +1,8 @@
 # Klipper Multi-color Configs for Arduino Uno and Rpi Pico
-This is an attempt at making a multi color config using an arduino uno and a CNC shield.
+While exploring options of adding extra I/O, I found that using a usb with an arduino and cnc sheild I had laying around could make multicolor an option. Here are my findings with both Arduino over usb and a Rpi Pico with a canbus connection.
+
+## Why no arduino uno canbus??
+Right now klipper only supports [CAN on stm32, SAME5x, and rp2040 chips](https://www.klipper3d.org/CANBUS.html#device-hardware). Arduino uno doesn't quite make the cut in this case.
 
 ## Items you'll need to utilize this config
 - Your 3d printer running klipper
