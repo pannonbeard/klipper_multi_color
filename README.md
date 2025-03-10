@@ -1,4 +1,4 @@
-# Klipper Multi-color Config
+# Klipper Multi-color Configs for Arduino Uno and Rpi Pico
 This is an attempt at making a multi color config using an arduino uno and a CNC shield.
 
 ## Items you'll need to utilize this config
@@ -12,7 +12,7 @@ This is an attempt at making a multi color config using an arduino uno and a CNC
 - [3d printed quad splitter](https://www.printables.com/model/466735-4-to-1-bowdenptfe-tube-joinersplitter)
 - A 2 to 4 color holder or stand
 
-## Steps
+## Arduino Steps
 - Attach Arduino to CB1/Raspberrypi
 - Flash Arduino
 - Upload multi_color.cfg to your klipper machine
@@ -45,7 +45,61 @@ Baud rate for serial port: 250000
 ### Troubles flashing arduino??
 [https://github.com/Klipper3d/klipper/issues/4938#issuecomment-1094246978](https://github.com/Klipper3d/klipper/issues/4938#issuecomment-1094246978)
 
-## Preparing the slicer!
+## Rpi Pico Steps w/ canbus
+This does require a few extra components to get it to work. If you wanted to use usb instead of canbus, you can flash it with your preffered usb settings for the pico.
+
+Extras needed:
+- [Rpi Pico](https://www.amazon.com/Raspberry-Development-Dual-core-Processor-Integrated/dp/B0CPMBRVDX/ref=sr_1_4?crid=L1CHGUTTQ84H&dib=eyJ2IjoiMSJ9._ppkHtY7vs-4LrTJ-McqCu1TUecr6CsdDR6efMbrA8WPjMqv9WjVU6DcHHFAzA5puIvi6Si_lsSmVZTKbH91SAuwXFPLK2wCbo_40BANJ8TsDWlWbMPMhQR6_oRgyadTB8gKAw-e5-GcizpbW09U6ldzaYstuV6lxaHbGvRfFWJIB5HpFneT_VIBhCnQ0864Gs3cty2wE8SEwzn_X57HyE6gyzNJle9aQCBkhNKRd8w.l_6Y5UI3ovRzEVuJOWbXD5v7WxOUXl5LFb3c2sofQSU&dib_tag=se&keywords=pi+pico&qid=1741572097&sprefix=pi+pico%2Caps%2C144&sr=8-4) (instead of the arduino of course)
+- [5v regulator](https://www.amazon.com/Regulator-Step-Down-Converter-MP1584EN-Aircraft/dp/B0DSZKQGBZ/ref=sr_1_2_sspa?crid=13KWI139KTW4K&dib=eyJ2IjoiMSJ9.KKh06qsL4egEaC49ZvfCUnga4qWmuIudwgSt4MXuAf12uSAPdpct8lo2VMLGpUbK6p1CjCXBeHOWUCfLQX9hERO9wD3RmOfhcZn2dy5s7Psb0_rcjMIkL6HwW0OCTkTqNIbDV3MhwZvI2bo5ZT2bwhT9zvI0A9tTjD29A3GbGZJB9mMI3Qb5y0AEl1F52SswXahNUaGy_L0oao6GT7uzgNaa7f_FaFL4IZAdBYaXzpUgSaeuV4qfV-H3igSJ__IgHNIAwBLzGRQqogCqO01R69iReVpl2hTpDFybD7RFTmg.GMzQw9K2ANzKsYbHWC9f5Fo5A_vTHLjkaR3XVUfGoFU&dib_tag=se&keywords=arduino+5v+regulator&qid=1741571818&sprefix=arduino+5v+regulato%2Caps%2C170&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1)
+- [Canbus Transiever](https://www.amazon.com/Comimark-Transceiver-TJA1050-Controller-Schnittstelle/dp/B07W4VZ2F2/ref=sr_1_6?crid=3UUQ0WMAKBQ9T&dib=eyJ2IjoiMSJ9.NNL58DY5rs0tgrb226Z743zWN8BDbmSIM8wmN1WWJ2YklFU70S0qRFwhFjIpNHzKXr7jLPG3msQJ1cjmFi8bQqkKDzD4uvJp2ktCt7moMfijR2BuZKqyshqfsyDogVMdHmk8yUddm-i_5ay8QQIGfwSj4XR20p2_1yf3kVp387Du9V27y2y99Nx7jHHmFGdG-rDUqfVvL9iUiaPTmm4g-mp2dv9WKIQm4HDBtRL6vbU.haqqTQ4DeLRvuclpCep427jMVSTh_vaFISucwu1C2Po&dib_tag=se&keywords=arduino+canbus&qid=1741571775&sprefix=arduino+canbus%2Caps%2C122&sr=8-6)
+- Soldering iron
+- Solderable Project board and Screw Terminals (I got these in a [kit](https://www.amazon.com/Sunxeke-Soldering-Electronic-Compatible-Connector/dp/B0BWCFH57N/ref=sr_1_16?crid=2GVC1KBEVDEVE&dib=eyJ2IjoiMSJ9.JQS93JxT9fTg_Qec5prcl7al7vOkyxKy5UiUVLHgq8xwurRgQW98DkB6WHH6_8qHGtafjirL_wfynDdqTwX6Jf4lvuMTn1Dx6AhqZX8AwW0Dkg0eO1SBgi-23lJEM_vODruIG6sPVAVU8Y3V4CK15wrOwOmY9MAbvDXe5w2zfsiIMr9cwaW-Y6IhUcYOFPh5-3rZ6BLdPPwz0N2wU9GyUj9fg-i_cbYMieUXsXykGI8ZqmjYcMZx8VNgsC3IVOshVIT6LcdJ56dgunQyhJw0m0PELgJf0TmgoWfn8Kwe-5iJQ5jKnsQgLubhVQxWSHEMWblKRDbavoJAVUwYCThXOykll9kZf-CLcyHggB_W_4Cb8GBzLxPO39aODuISS_aA5Ey5USL29j7OiBzaC7sK7EEM7XKEq-ajynHZ-aunMbUViCWD07jPqYtGOc_xdxKh.PWyL7fVF9fudB6r4W5Y8kPY1CIk4oalaPABr0BZkRzo&dib_tag=se&keywords=soldering%2Bproject%2Bboard&qid=1741572021&sprefix=soldering%2Bproject%2Bboard%2Caps%2C126&sr=8-16&th=1))
+- Hookup wire (multi colors to help tell things apart)
+
+This does require some soldering skills and tools so... prepare yourself.
+
+### Flash Options for Pi Pico w/ canbus
+You can either setup the flashing file for the pico by either through the klipper folder or KIAUH, here we will do the klipper folder.
+Enter `cd klipper && make menuconfig`
+
+```
+[*] Enable extra low-level configuration options
+Micro-controller Architecture (Raspberry Pi RP2040/RP235x)  --->
+    Processor model (rp2040)  --->
+    Bootloader offset (No bootloader)  --->
+    Flash chip (GENERIC_03H with CLKDIV 4)  --->
+    Communication Interface (CAN bus)  --->
+(4) CAN RX gpio number
+(5) CAN TX gpio number
+(500000) CAN bus speed
+```
+
+### Copy file to klipper config folder
+From the klipper out folder you will need the `klipper.uf2` file. You just need to download it.
+
+### Flash pico
+On your main pc, not the comp for the printer, hook up the pico while holding the "boot" button down.
+It should attach the pico as a storage device. Transfer the Klipper.uf2 file into that storage device. It will reboot and flash the pico.
+It is now flashed with klipper.
+
+## Interfacing the Pico and the CNC sheild
+This will require some soldering equiptment, project circuit boards, and other items to attach the pi and the shield together.
+In my current configuration I have attached the following:
+```
+PICO GPIO6 -> CNC Enable pin
+PICO GPIO7 -> Y DIR
+PICO GPIO8 -> X DIR
+PICO GPIO9 -> Y Steps
+PICO GPIO10 -> X Steps
+```
+You can attach these pins in any way you like there are so many options on the pi pico.
+
+### Note about powering the pico, canbus transiever and the drivers
+One thing that caught me up for a while was that there is a 5v line that would normally be fed from the arduino that is plugged in over usb to the cnc board. This 5v connection is essencial for the drivers to work.
+You should connect the `+/-` of the 5v regulator to `VSYS / GND` on the pico, the `VCC / GND` on the canbus transiever, and the `5v line` of the CNC Sheild.
+
+
+# Preparing the slicer!
 
 There are a few custom Klipper Macros to make some of this easier.
 - UNLOAD_COLOR
