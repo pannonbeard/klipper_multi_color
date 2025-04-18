@@ -150,19 +150,19 @@ There are a few custom Klipper Macros to make some of this easier.
 - LOAD_COLOR
 - CHANGE_COLOR
 - SET_COLOR
+- PARK
+- TIP_SHAPE
 
-The filament changing macros currently don't have a set of temps to allow the change so you'll need to heat your extruder before using them.
+## How do I make colors change!?
+In Orca when you change colors a `T0`, `T1`, `T2`, etc... will be called at color change. In the macros this calls the `COLOR_CHANGE` macro. This will park your machine and run it through tip shaping.
 
-Our change gcode was put together in Orca Slicer so you will need to adjust depending on your slicer. In your filament change gcode you'll want to set it to something similar to the following:
-```
-; For Orca Slicer
-; - Custom AMS tool T{next_extruder} -
-CHANGE_COLOR NEXT_COLOR={next_extruder} DISTANCE=200
-M117 Custom AMS Tool T{next_extruder}
-```
+You will need to tune some distances for your filment to load and unload. You will want to modify the `UNLOAD_COLOR` and the `LOAD_COLOR` macros default distances to get the correct amount of retract at the end.
 
 ## Activating Multi-Color
 add ``[include 'multi_color.cfg']`` to you printer.cfg file.
+
+## Variables handling
+This multicolor uses variables that are stored on system in a `variables.cfg` file. You can adjust this in `multi_color.cfg` on the line with `[save_variables]` to adjust where you save your current list of configs or where ever you want to save that `variables.cfg` file.
 
 ## Extruders in tandum vs separate
 Depending on your needs one way may benefit you more than another.
